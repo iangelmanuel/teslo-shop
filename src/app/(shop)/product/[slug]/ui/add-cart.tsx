@@ -2,11 +2,11 @@
 
 import { useState } from 'react'
 import { QuantitySelector, SizeSelector } from '@/components'
-import type { CartProduct, SeedProduct, Size } from '@/interfaces'
+import type { CartProduct, Product, Size } from '@/interfaces'
 import { useCartStore } from '@/store'
 
 interface Props {
-  product: SeedProduct
+  product: Product
 }
 
 export const AddCart = ({ product }: Props) => {

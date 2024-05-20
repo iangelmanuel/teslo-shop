@@ -1,4 +1,4 @@
-export interface SeedProduct {
+export interface Product {
   id: string
   description: string
   images: string[]

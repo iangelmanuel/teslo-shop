@@ -1,10 +1,9 @@
 'use client'
 
 import { useEffect, useState, Fragment } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useCartStore } from '@/store'
-import { QuantitySelector } from '@/components'
+import { ProductImage, QuantitySelector } from '@/components'
 
 export const ProductsInCart = () => {
   const [loaded, setLoaded] = useState(false)
@@ -24,8 +23,8 @@ export const ProductsInCart = () => {
   return productsInCart?.map(product => (
     <Fragment key={`${product.slug}-${product.size}`}>
       <section className="flex gap-5">
-        <Image
-          src={`/products/${product.image}`}
+        <ProductImage
+          src={product.image}
           alt={product.title}
           width={100}
           height={100}

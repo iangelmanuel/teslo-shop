@@ -3,10 +3,10 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import type { SeedProduct } from '@/interfaces'
+import type { Product } from '@/interfaces'
 
 interface Props {
-  product: SeedProduct
+  product: Product
 }
 
 export const ProductGridItem = ({ product }: Props) => {

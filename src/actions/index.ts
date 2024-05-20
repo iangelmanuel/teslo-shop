@@ -1,5 +1,8 @@
 export * from './products/product-pagination'
 export * from './products/get-product-by-slug'
+export * from './products/create-update-product'
+export * from './products/delete-product-image'
+
 export * from '@/actions/products/get-stock-by-slug'
 
 export * from './country/get-countries'
@@ -21,3 +24,5 @@ export * from './payment/paypal-payment'
 
 export * from './user/get-paginated-users'
 export * from './user/change-user-role'
+
+export * from './category/get-categories'

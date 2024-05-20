@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+import { ProductImage } from '../product-image/product-image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import type { Swiper as SwiperType } from 'swiper'
@@ -18,18 +18,17 @@ interface Props {
   className: string
 }
 
-const swiperStyles: React.CSSProperties = {
-  '--swiper-navigation-color': '#fff',
-  '--swiper-pagination-color': '#fff'
-}
-
 export const ProductSlideShow = ({ images, title, className }: Props) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType>()
 
   return (
     <div className={className}>
       <Swiper
-        style={swiperStyles}
+        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+        style={{
+          '--swiper-navigation-color': '#fff',
+          '--swiper-pagination-color': '#fff'
+        } as React.CSSProperties}
         spaceBetween={10}
         navigation={true}
         autoplay={{ delay: 2500 }}
@@ -41,8 +40,8 @@ export const ProductSlideShow = ({ images, title, className }: Props) => {
       >
         {images.map(image => (
           <SwiperSlide key={image}>
-            <Image
-              src={`/products/${image}`}
+            <ProductImage
+              src={image}
               alt={title}
               width={500}
               height={500}
@@ -63,8 +62,8 @@ export const ProductSlideShow = ({ images, title, className }: Props) => {
       >
         {images.map(image => (
           <SwiperSlide key={image}>
-            <Image
-              src={`/products/${image}`}
+            <ProductImage
+              src={image}
               alt={title}
               width={300}
               height={300}

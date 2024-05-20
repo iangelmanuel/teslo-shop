@@ -59,3 +59,7 @@ body {
 .btn-disabled {
   @apply bg-gray-600 text-white py-2 px-4 rounded transition-all;
 }
+
+.btn-danger {
+  @apply bg-red-500 hover:bg-red-800 text-white py-2 px-4 transition-all;
+}
